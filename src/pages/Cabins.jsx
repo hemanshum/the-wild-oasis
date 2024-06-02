@@ -1,11 +1,13 @@
+import { useState } from "react";
+
 import Row from "../ui/Row";
 import CabinTable from "../features/cabins/CabinTable";
 import Heading from "../ui/Heading";
+import CreateCabinForm from "../features/cabins/CreateCabinForm";
+import Button from "../ui/Button";
 
 function Cabins() {
-  // useEffect(() => {
-  //   getCabins().then((data) => console.log(data));
-  // });
+  const [showForm, setShowForm] = useState(false);
 
   return (
     <>
@@ -15,6 +17,11 @@ function Cabins() {
       </Row>
       <Row>
         <CabinTable />
+
+        <Button onClick={() => setShowForm(!showForm)}>
+          {showForm ? "Hide form" : "Show form"}
+        </Button>
+        {showForm && <CreateCabinForm />}
       </Row>
     </>
   );

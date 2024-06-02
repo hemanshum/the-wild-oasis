@@ -63,7 +63,7 @@ function CabinRow({ cabin }) {
   });
 
   return (
-    <TableRow role="row">
+    <TableRow>
       <Img src={image} alt={name} />
       <Cabin>{name}</Cabin>
       <div>Fits up to {maxCapacity}</div>
@@ -86,6 +86,6 @@ CabinRow.propTypes = {
     regularPrice: PropTypes.number.isRequired,
     discount: PropTypes.number.isRequired,
     description: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
+    image: PropTypes.string,
   }).isRequired,
 };
